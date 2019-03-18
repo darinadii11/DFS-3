@@ -1,0 +1,41 @@
+<div id="content">
+  <h1>CSS circles using border radius</h1>
+  <div class="circle blue">Blue</div>
+  <div class="circle green">Green</div>
+  <div class="circle red">Red</div>
+  <p class="feedback">Feedback welcomed via Twitter - <a href="http:/twitter.com/tomdurkin">@tomdurkin</a></p>
+</div>  
+
+body {
+  font-family: "open sans", sans-serif;
+  background: #f1f1f1;
+}
+#content {
+  margin: 40px auto;
+  text-align: center;
+  width: 600px;
+}
+
+.circle{
+  position: absolute;
+  background: red;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+div {
+  color: blue;
+}
+var circle = $(".circle");
+
+$(document).mousemove(function( event ) {
+  var pageX = event.pageX;
+  var pageY = event.pageY;
+  console.log(pageX + " , " + pageY);
+  $(".circle").css({
+   "right": pageX + "px",
+   "bottom": pageY + "px"
+  })
+});
